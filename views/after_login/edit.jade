@@ -1,0 +1,25 @@
+extend ../layout
+
+block content
+  h1= title
+  p #{title}
+  p #{msg}
+  form(method='post', action='/update')
+    input(type='hidden',name='id',value='#{data.id}')
+    table
+      tr
+        td Name
+        td
+          input(type='text',name='name',value='#{data.name}')
+      tr
+        td Mail
+        td
+          input(type='text',name='mail',value='#{data.mail}')
+      tr
+        td Tel
+        td
+          input(type='text',name='tel',value='#{data.tel}')
+      tr
+        td
+        td
+          input(type='submit',value='送信')

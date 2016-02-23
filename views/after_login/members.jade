@@ -1,0 +1,21 @@
+extend ../layout
+
+block content
+  h1= title
+  p #{title}
+  table(border='1')
+    tr
+      th id
+      th name
+      th mail
+      th tel
+    each data in datas
+      tr
+        td
+          a(href='/edit/#{data.id}') #{data.id}
+        td= data.name
+        td= data.mail
+        td= data.tel
+    form(method='post',action='/members/edit')
+      input(type='submit',value='編集')
+    input(type='button',onClick='history.back();',value='top')

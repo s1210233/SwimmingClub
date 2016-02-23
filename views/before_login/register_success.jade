@@ -1,0 +1,18 @@
+extend ../layout
+
+block content
+  h1= title
+  table(border='1')
+    tr
+      th id
+      th name
+      th mail
+      th tel
+    each data in datas
+      tr
+        td= data.id
+        td= data.name
+        td= data.mail
+        td= data.tel
+  form(method='post',action='/login')
+    input(type='submit',value='ログインホームページへ')

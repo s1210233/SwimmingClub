@@ -1,0 +1,23 @@
+extend ../layout
+
+block content
+  h1= title
+  p #{msg}
+  form(method='post', action='/create/add')
+    table
+      tr
+        td Name
+        td
+          input(type='text',name='name')
+      tr
+        td Mail
+        td
+          input(type='text',name='mail')
+      tr
+        td Tel
+        td
+          input(type='text',name='tel')
+      tr
+        td
+        td
+          input(type='submit',value='送信')
