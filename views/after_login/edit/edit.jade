@@ -1,8 +1,7 @@
-extend ../layout
+extend ../../layout
 
 block content
   h1= title
-  p #{title}
   p #{msg}
   form(method='post', action='/update')
     input(type='hidden',name='id',value='#{data.id}')

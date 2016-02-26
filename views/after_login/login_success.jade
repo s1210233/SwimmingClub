@@ -4,6 +4,6 @@ block content
   h1 #{title}
   p #{msg}
   p name : #{name}
-  form(method='post',action='/members')
+  form(method='get',action='/members')
     input(type='submit',value='部員一覧')
   input(type='button',onClick='history.back();',value='戻る')

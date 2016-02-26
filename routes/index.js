@@ -8,17 +8,17 @@ router.get('/', function(req, res, next) {
 
 /* POST login page. */
 router.post('/login', function(req, res, next) {
-    res.render('login',{
-       title: 'Login Screen',
-       msg: '名前とパスワードを入力してください。'
-    });
+  res.render('login',{
+    title: 'Login Screen',
+    msg: '名前とパスワードを入力してください。'
+  });
 });
 
 router.post('/create', function(req, res, next) {
-    res.render('before_login/create',{
-       title: 'Create New Account',
-       msg: '名前、メール、電話番号を記入してください。'
-    });
+  res.render('before_login/create',{
+    title: 'Create New Account',
+    msg: '名前、メール、電話番号を記入してください。'
+  });
 });
 
 

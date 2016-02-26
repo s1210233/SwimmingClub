@@ -13,6 +13,9 @@ var users = require('./routes/users');
 var members = require('./routes/after_login/members');
 var create = require('./routes/before_login/create');
 var edit = require('./routes/after_login/edit/edit');
+var update = require('./routes/after_login/edit/update');
+var del = require('./routes/after_login/edit/delete');
+var remove = require('./routes/after_login/edit/remove');
 
 var app = express();
 
@@ -51,6 +54,9 @@ app.use('/', login);
 app.use('/members', members);
 app.use('/create', create);
 app.use('/edit', edit);
+app.use('/update', update);
+app.use('/delete', del);
+app.use('/remove', remove);
 app.use('/', sessionCheck);
 
 

@@ -1,0 +1,8 @@
+extend ../../layout
+
+block content
+  h1= title
+  p= 'id:' + data.id + ' name:' + data.name
+  form(method='post',action='/remove')
+    input(type='hidden', name='id', value='#{data.id}')
+    input(type='submit',value='削除する')

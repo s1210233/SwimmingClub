@@ -1,4 +1,4 @@
-extend ../layout
+extend  ../../layout
 
 block content
   h1= title
@@ -10,11 +10,9 @@ block content
       th tel
     each data in datas
       tr
-        td
-          a(href='/edit/#{data.id}') #{data.id}
+        td= data.id
         td= data.name
         td= data.mail
         td= data.tel
-        td
-          a(href='/delete/#{data.id}') 削除
-    input(type='button',onClick='history.back();',value='top')
+  form(method='post',action='/members')
+    input(type='submit',value='部員一覧へ')

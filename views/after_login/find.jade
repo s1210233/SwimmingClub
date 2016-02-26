@@ -1,0 +1,17 @@
+extend ../layout
+
+block content
+  h1= title;
+  p#msg #{msg}
+  form(method='post', action='/find')
+    p FIND:
+      input(type='text',name='find',value='#{find}')
+      input(type='submit',value='検索')
+  hr
+  table(border="1")
+    each data in datas
+      tr
+        td= data.id
+        td= data.name
+        td= data.mail
+        td= data.tel

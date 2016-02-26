@@ -6,21 +6,19 @@ router.get('/:id',function(req, res, next){
   var id = req.params.id;
   var conf = "tcp://mynavi:nodejs@localhost:5432/mynavi_db";
   pg.connect(conf, function(err, client){
-    if(err){
-      console.log(err);
+    if (err) {
       res.redirect('/');
     } else {
       var sql = "select * from mydata where id = " + id;
-      client.query(sql,function(err,result){
-        if(err){
-          console.log(err);
-          res.redirect('/');
+      client.query(sql, function(err, result){
+        if (err) {
+            console.log(err);
+            res.redirect('/');
         } else {
-          res.render('after_login/edit/edit',{
-            title : 'ステータス',
-            msg : '送信してください',
-            data : result.rows[0]
-          });
+             res.render('after_login/edit/delete',{
+              title : '削除しますか？',
+              data : result.rows[0]
+            });
         }
       });
     }
